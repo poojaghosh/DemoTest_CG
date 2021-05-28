@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>www.kcpadvantage.com</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/style-1.css">
+  <link href="assets/datatables.min.css" rel="stylesheet">
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/datatables.min.js"></script>
+   
+  
+</head>
+<body>
+<div class="kcp-wrapper">
+	<header class="jumbotron vertical-center" style="">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					
+					<nav class="navbar navbar-expand-sm">
+					  <!-- Brand/logo -->
+					  <a class="navbar-brand" href="#"><img src="assets/logo-kcp-advantage.jpg" alt="logo" class="my-auto"/></a>
+					  
+					  <!-- Links -->
+					  <ul class="navbar-nav ml-auto right-side-header-menu">
+						<li><img class="distributor-icon" src="assets/menu-icon-distributor.png"> Show distributor SKU code</li>
+                        <li id="myProductListItem"><a href="/my-manage-list"><span>My Lists</span><div class="product-list-number">  49</div></a></li>
+						<li><a href="/findmyrep" class="newOption"><strong>Find My Rep</strong></a></li>
+                        <li class="desktopOnly show-for-large-only"><a href="/profile">Account</a></li>
+                        <li><a href="/contact-us">Contact Us</a></li>
+                        <li class="desktop-avatar" style="text-align: center;">
+                            <span class="separator">|  &nbsp;</span><a href="/profile"><span>Hello, <span class="name"> Guest</span>.</span></a><br class="show-for-medium-only">
+                             
+						</li>
+						<li><a href="#" class="logout" onclick="logoutGigyaSession();">Log out</a></li>
+					  </ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<nav class="second-nav">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div style="display:inline-block">
+						<img src="assets/search.jpg" alt=""/>
+					</div>
+					<div style="display:inline-block">
+					
+						<ul class="navbar-nav" style="margin-left: 79px;">
+						  <li class="nav-item">
+							<a class="nav-link" href="#"><img src="assets/existing-business-tracker-icon.png" alt=""/></a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="#"><img src="assets/menu-icon-cross-reference.png" alt=""/></a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="#"><img src="assets/menu-icon-calculator.png" alt=""/></a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="#"><img src="assets/menu-icon-kcpzone.png" alt=""/></a>
+						  </li>
+						  <li class="nav-item my-cart dropdown">
+							<a class="nav-link dropbtn" href="#"><img src="assets/Sample-Request.png" alt="" /></a>
+							<div class="dropdown-content" onClick="event.stopPropagation();">
+									
+								<div class="cart-container">
+									
+									<div class="tab-content sub-content">
+									
+										<div class="modal-es-header container">
+											<div class="row">
+												<div class="col text-right">
+													<div class="close-wrap">
+														<a href="javascript:void(0)" class="hoverModalclose"><span>×</span></a>
+													</div>
+												</div>
+											</div>
+											<div class="row mb-2">
+												<div class="col text-left totaliteam">
+													Total Items : <span class="itemcount">02</span>
+												</div>
+												<div class="col text-right subtotal">
+													Subtotal : <span class="subtotal">$0.00</span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col">
+													<div id="searchArea">
+													</div>
+												</div>
+												<div class="col text-right">
+													<a href="#" class="button cart-btn" onclick="openClearCartModal();">Clear Cart</a>
+												</div>
+											</div>
+											
+										</div>
+										<div class="scrollbar modal-es-body" id="style-2">
+										  <div class="container">
+											
+										  
+											<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+											  <thead style="display:none">
+												<tr>
+												  <th class="th-sm">Product
+												  </th>
+												  <th class="th-sm">Description
+												  </th>
+												  <th class="th-sm">Cost
+												  </th>
+												  <th class="th-sm">Action
+												  </th>
+												  
+												</tr>
+											  </thead>
+											  <tbody>
+												<tr class="cart-row">
+												  <td>
+													<div class="img-wrap">
+															<img src="assets/pro-1.jpg" alt="">
+														</div>
+													</td>
+												  <td>
+														<p class="proID"><span>SKU : 2345</span></p>
+														<p class="proName" data-toggle="tooltip" data-container="body" data-html="true" title="" data-original-title="KleenGuard™ G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case"><span>KleenGuard™ G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case</span></p>
+														<div class="proQty">
+															<p>Qty :</p> 
+															 <ul class="guestCounter">
+																  <li data-btn-type="increment"><button class="romoveBtn"><i class="fa fa-plus"></i></button> </li>
+																  <li class="counterText"><input type="text" name="guestCount" id="btnGuestCount" value="1" disabled /> </li>
+																  <li data-btn-type="decrement"><button class="romoveBtn"><i class="fa fa-minus"></i></button></li>
+															   </ul> 
+														</div>
+												  </td>
+												  <td><p class="proAmt">$31.44</p></td>
+												  <td><i class="fa fa-trash removeRecord" id="showDeleteModal" data-toggle="modal" data-target="#myModal"></i></td>
+												 
+												</tr>
+												
+												<tr class="cart-row">
+												  <td>
+													<div class="img-wrap">
+															<img src="assets/pro-1.jpg" alt="">
+														</div>
+													</td>
+												  <td>
+														<p class="proID"><span>SKU : 2345</span></p>
+														<p class="proName" data-toggle="tooltip" data-container="body" data-html="true" title="" data-original-title="KleenGuard™ G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case"><span>KleenGuard™ G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case</span></p>
+														<div class="proQty">
+															<p>Qty :</p> 
+															 <ul class="guestCounter">
+																  <li data-btn-type="increment"><button class="romoveBtn"><i class="fa fa-plus"></i></button> </li>
+																  <li class="counterText"><input type="text" name="guestCount" id="btnGuestCount" value="1" disabled /> </li>
+																  <li data-btn-type="decrement"><button class="romoveBtn"><i class="fa fa-minus"></i></button></li>
+															   </ul> 
+														</div>
+												  </td>
+												  <td><p class="proAmt">$31.44</p></td>
+												  <td><i class="fa fa-trash removeRecord" id="showDeleteModal" data-toggle="modal" data-target="#myModal"></i></td>
+												 
+												</tr>
+
+<tr class="cart-row">
+												  <td>
+													<div class="img-wrap">
+															<img src="assets/pro-1.jpg" alt="">
+														</div>
+													</td>
+												  <td>
+														<p class="proID"><span>SKU : 2345</span></p>
+														<p class="proName" data-toggle="tooltip" data-container="body" data-html="true" title="" data-original-title="KleenGuard™ G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case"><span>KleenGuard™ G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case</span></p>
+														<div class="proQty">
+															<p>Qty :</p> 
+															 <ul class="guestCounter">
+																  <li data-btn-type="increment"><button class="romoveBtn"><i class="fa fa-plus"></i></button> </li>
+																  <li class="counterText"><input type="text" name="guestCount" id="btnGuestCount" value="1" disabled /> </li>
+																  <li data-btn-type="decrement"><button class="romoveBtn"><i class="fa fa-minus"></i></button></li>
+															   </ul> 
+														</div>
+												  </td>
+												  <td><p class="proAmt">$31.44</p></td>
+												  <td><i class="fa fa-trash removeRecord" id="showDeleteModal" data-toggle="modal" data-target="#myModal"></i></td>
+												 
+												</tr>												
+												 
+												 
+												 
+												
+											  </tbody>
+											   
+											</table>
+											   
+											
+											
+										  </div>
+										  <div class="force-overflow"></div>
+										</div>
+						 
+										<div class="modal-es-footer">
+											<div class="input-group mb-2">
+											<button type="button" class="btn btn-primary btn-cart-chkout" style="width:100%">View Cart & Checkout</button>
+											</div>
+										</div>
+									</div>
+		 
+								</div>
+							</div>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="#"><img src="assets/menu-icon-back.png" alt=""/></a>
+						  </li>					  
+						</ul>
+						</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container" style="margin-top:30px">
+	  <div class="row">
+		<div class="col-sm-4">
+		  <h2>About Me</h2>
+		  <h5>Photo of me:</h5>
+		  <div class="fakeimg">Fake Image</div>
+		  <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+		  <h3>Some Links</h3>
+		  <p>Lorem ipsum dolor sit ame.</p>
+		  <ul class="nav nav-pills flex-column">
+			<li class="nav-item">
+			  <a class="nav-link active" href="#">Active</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#">Link</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#">Link</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link disabled" href="#">Disabled</a>
+			</li>
+		  </ul>
+		  <hr class="d-sm-none">
+		</div>
+		<div class="col-sm-8">
+		  <h2>TITLE HEADING</h2>
+		  <h5>Title description, Dec 7, 2017</h5>
+		  <div class="fakeimg">Fake Image</div>
+		  <p>Some text..</p>
+		  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+		  <br>
+		  <h2>TITLE HEADING</h2>
+		  <h5>Title description, Sep 2, 2017</h5>
+		  <div class="fakeimg">Fake Image</div>
+		  <p>Some text..</p>
+		  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+		</div>
+	  </div>
+</div>
+
+	<footer class="jumbotron text-center" style="margin-bottom:0">
+	  <p>Footer</p>
+	</footer>
+</div>
+
+<!-- The Modal -->
+  <div class="modal" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Remove Product</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you sure, you want delete this product from cart!
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+		  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<script>
+ $(document).ready(function(){ 
+    
+	$('.dropdown-content').hide();
+	$(".dropbtn").hover(function() {
+			 
+			$('.dropdown-content').fadeIn();
+		},function() {
+        setTimeout(function() {
+        if(!($('.dropdown-content:hover').length > 0))
+            $('.dropdown-content').fadeOut();
+        }, 300);
+    }); 
+	
+	$(".hoverModalclose").on('click', function(){ 
+		$('.dropdown-content').fadeOut();
+	})
+
+	$(".nav-tabs a").click(function(){
+		event.preventDefault();
+		$(this).tab('show');
+	});
+	
+	
+	<!-- var container = $(".dropdown-content"); -->
+	<!-- $(document).on('click', function (e) { -->
+    <!-- // if the target of the click isn't the container nor a descendant of the container -->
+    <!-- if (!container.is(e.target) && container.has(e.target).length === 0)  -->
+    <!-- { -->
+        <!-- container.hide(); -->
+    <!-- } -->
+	<!-- }); -->
+	
+	$('[data-toggle="tooltip"]').tooltip(); 
+	 
+	
+	$('#dtBasicExample').DataTable({
+		//"searching": false // false to disable search (or any other option)
+		"paging": false,
+		"bInfo" : false,
+		"language": { search: '', searchPlaceholder: "Search..." },
+		initComplete : function() {
+			$("#dtBasicExample_filter").detach().appendTo('#searchArea');
+		}
+		
+	});
+	$('.dataTables_length').addClass('bs-select');
+	
+	
+	$('.removeRecord').on('click', function (e) {
+	  //Call your Function here 
+	  $('#deleteModal').modal('show');
+	});
+	
+	
+	// set event for guest counter
+$(".guestCounter li").on("click", function (element) {
+    var operationType = $(this).attr("data-btn-type");
+    //console.log(operationType);
+    var oldValue = $(this).parent().find("input").val();
+    //console.log(oldValue);
+
+    let newVal;
+    if (operationType == "increment") {
+         newVal = parseFloat(oldValue) + 1;
+    } else {
+        // Don't allow decrementing below zero
+        if (oldValue > 1) {
+             newVal = parseFloat(oldValue) - 1;
+        } else {
+            newVal = 1;
+        }
+    }
+    $(this).parent().find("input").val(newVal);
+});
+}); 
+</script>
+</body>
+</html>

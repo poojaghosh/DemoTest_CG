@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>www.kcpadvantage.com</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/style-1.css">
+    <link href="assets/datatables.min.css" rel="stylesheet">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/datatables.min.js"></script>
+
+</head>
+<body>
+    <div class="kcp-wrapper">
+        <header class="jumbotron vertical-center" style="">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                        <nav class="navbar navbar-expand-sm">
+                            <!-- Brand/logo -->
+                            <a class="navbar-brand" href="#"><img src="assets/logo-kcp-advantage.jpg" alt="logo" class="my-auto" /></a>
+
+                            <!-- Links -->
+                            <ul class="navbar-nav ml-auto right-side-header-menu">
+                                <li><img class="distributor-icon" src="assets/menu-icon-distributor.png"> Show distributor SKU code</li>
+                                <li id="myProductListItem"><a href="/my-manage-list"><span>My Lists</span><div class="product-list-number">  49</div></a></li>
+                                <li><a href="/findmyrep" class="newOption"><strong>Find My Rep</strong></a></li>
+                                <li class="desktopOnly show-for-large-only"><a href="/profile">Account</a></li>
+                                <li><a href="/contact-us">Contact Us</a></li>
+                                <li class="desktop-avatar" style="text-align: center;">
+                                    <span class="separator">|  &nbsp;</span><a href="/profile"><span>Hello, <span class="name"> Guest</span>.</span></a><br class="show-for-medium-only">
+
+                                </li>
+                                <li><a href="#" class="logout" onclick="logoutGigyaSession();">Log out</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="cart-container">
+            <div class="tab-content sub-content">
+                <div class="modal-es-header container">
+                    <div class="row">
+                        <div class="col text-right">
+                            <div class="close-wrap">
+                                <a href="javascript:void(0)" class="hoverModalclose"><span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col text-left totaliteam">
+                            Total Items : <span class="itemcount">02</span>
+                        </div>
+                        <div class="col text-right subtotal">
+                            Subtotal : <span class="subtotal">$0.00</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="searchArea">
+                            </div>
+                        </div>
+                        <!-- <div class="col text-right">
+                            <a href="#" class="button cart-btn" onclick="openClearCartModal();">Clear Cart</a>
+                        </div> -->
+                    </div>
+
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="50%">
+                                <thead style="display:none">
+                                    <tr>
+                                        <th class="th-sm">
+                                            Product
+                                        </th>
+                                        <th class="th-sm">
+                                            Description
+                                        </th>
+                                        <th class="th-sm">
+                                            Cost
+                                        </th>
+                                        <th class="th-sm">
+                                            Action
+                                        </th>
+        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="cart-row">
+                                        <td>
+                                            <div class="img-wrap">
+                                                <img src="assets/pro-1.jpg" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="proID"><span>SKU : 2345</span></p>
+                                            <p class="proName" data-toggle="tooltip" data-container="body" data-html="true" title="" data-original-title="KleenGuard G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case"><span>KleenGuard G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case</span></p>
+                                            <div class="proQty">
+                                                <p>Qty :</p>
+                                                <ul class="guestCounter">
+                                                    <li data-btn-type="increment"><button class="romoveBtn"><i class="fa fa-plus"></i></button> </li>
+                                                    <li class="counterText"><input type="text" name="guestCount" id="btnGuestCount" value="1" disabled /> </li>
+                                                    <li data-btn-type="decrement"><button class="romoveBtn"><i class="fa fa-minus"></i></button></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td><p class="proAmt">$31.44</p></td>
+                                        <td><i class="fa fa-trash removeRecord" id="showDeleteModal" data-toggle="modal" data-target="#myModal"></i></td>
+        
+                                    </tr>
+        
+                                    <tr class="cart-row">
+                                        <td>
+                                            <div class="img-wrap">
+                                                <img src="assets/pro-1.jpg" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="proID"><span>SKU : 2345</span></p>
+                                            <p class="proName" data-toggle="tooltip" data-container="body" data-html="true" title="" data-original-title="KleenGuard G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case"><span>KleenGuard G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case</span></p>
+                                            <div class="proQty">
+                                                <p>Qty :</p>
+                                                <ul class="guestCounter">
+                                                    <li data-btn-type="increment"><button class="romoveBtn"><i class="fa fa-plus"></i></button> </li>
+                                                    <li class="counterText"><input type="text" name="guestCount" id="btnGuestCount" value="1" disabled /> </li>
+                                                    <li data-btn-type="decrement"><button class="romoveBtn"><i class="fa fa-minus"></i></button></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td><p class="proAmt">$31.44</p></td>
+                                        <td><i class="fa fa-trash removeRecord" id="showDeleteModal" data-toggle="modal" data-target="#myModal"></i></td>
+        
+                                    </tr>
+        
+                                    <tr class="cart-row">
+                                        <td>
+                                            <div class="img-wrap">
+                                                <img src="assets/pro-1.jpg" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="proID"><span>SKU : 2345</span></p>
+                                            <p class="proName" data-toggle="tooltip" data-container="body" data-html="true" title="" data-original-title="KleenGuard G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case"><span>KleenGuard G10 Blue Nitrile Gloves (57373), Large, Powder-Free, 6 Mil, Ambidextrous, Thin Mil, 100 Gloves / Box, 10 Boxes / Case</span></p>
+                                            <div class="proQty">
+                                                <p>Qty :</p>
+                                                <ul class="guestCounter">
+                                                    <li data-btn-type="increment"><button class="romoveBtn"><i class="fa fa-plus"></i></button> </li>
+                                                    <li class="counterText"><input type="text" name="guestCount" id="btnGuestCount" value="1" disabled /> </li>
+                                                    <li data-btn-type="decrement"><button class="romoveBtn"><i class="fa fa-minus"></i></button></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td><p class="proAmt">$31.44</p></td>
+                                        <td><i class="fa fa-trash removeRecord" id="showDeleteModal" data-toggle="modal" data-target="#myModal"></i></td>
+        
+                                    </tr>
+        
+        
+        
+        
+                                </tbody>
+        
+                            </table>
+                            <a id="checkout" href="#section1" onclick="myFunction()" type="button" class="btn btn-primary pull-right">Next</a>
+                            <div id="ShippingForm">
+                                <p>
+                                    <div class="main" id="section1">
+                                        <h2>Shipping Details</h2>
+                                        Confirm Address: <br />
+                                        <br />
+                                        no 8 ,3rd cross street<br />
+                                        green valley, USA <br />
+                                    </div>
+                                    <a id="shipcontinue" href="#section2" class="btn btn-primary pull-right">Continue Payment</a> <br />
+                                </p>
+                            </div>
+                            <section id="PaymentForm" class="mb-3">
+                                <h2>Payment Options</h2>
+                                <form>
+                                    <div class="main" id="section2">
+                                        <button type="button" class="btn btn-primary">CreditCard</button>
+                                        <button type="button" class="btn btn-primary">NetBanking</button>
+                                        <a id="paymoreoptions" href="#sectionPayMore" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo" onclick="myFunction()">+ More</a>
+                                        <br>
+                                    </div>
+                                </form>
+                            </section>
+                            <section id="PayMore" class="mb-3">
+                                <div id="sectionPayMore">
+                                    <input type="image" id="image" alt="Login"
+                                           src="assets/Paypal-icon.png" width="150" height="90">
+                                    <input type="image" id="image" alt="Login"
+                                           src="assets/Bitpay-icon.png" width="150" height="90">
+                                    <a id="popularwallets" href="#sectionPopularWallets">
+                                        <input type="image" id="image" alt="Login"
+                                               src="assets/cryptocurrency-icon.png" width="150" height="90" />
+                                    </a>
+                                    <a id="visa" href="#sectionPopularWallets">
+                                        <input type="image" id="image" alt="Login"
+                                               src="assets/visa.PNG"  width="160" height="90"/>
+                                    </a>
+        
+                                    <br />
+        
+                                    <a href="">
+                                        <button class="btn btn-outline-dark">Pay with Cash</button>
+                                    </a>
+                                </div>
+                            </section>
+                            <section id="PopularWallets" class="mb-4">
+                                <div class="main" id="sectionPopularWallets">
+                                    <h2>Popular Wallets</h2>
+                                    <label class="radio-inline">
+                                        <input type="radio" class="mr-2" name="pw" src="assets/binance-icon.png" width="150" height="90" value="Binance">Binance &emsp;
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" class="mr-2" name="pw" value="Coin Delta">Coin Delta &emsp;
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" class="mr-2" name="pw" value="Coin Base">Coin Base &emsp;
+                                    </label>
+        
+                                    <div class="dropdown checkbox-inline">
+                                        
+                                        <select class="form-control" id="sel1" value="">
+                                            <option value="">--Other Wallets--</option>
+                                            <option value="Edge">Edge</option>
+                                            <option value="Electrum">Electrum</option>
+                                            <option value="MyCelium">MyCelium</option>
+                                          </select>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary paynow " id="paynow" >Pay Now <span class="finalamt"></span></button>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body, html, .main {
+            height: 100%;
+            background:#BFE1E1;
+        }
+
+        .opac{
+            opacity: .65;
+        }
+
+        .tab-content.sub-content{
+            background:#BFE1E1;
+        }
+
+        .btn.paynow{
+            background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+        }
+
+        @media (max-width:767px){
+            .cart-row .proID, .cart-row .proName{
+                width: 170px;
+            }
+            section{
+                padding: 20px 0px;
+            }
+            .btn.paynow{
+                margin-top: 10px;
+            }
+        }
+        
+    </style>
+    <script>
+        function myFunction() {
+            document.getElementById("demo").style.color = "red";
+        }
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("#ShippingForm").hide();
+            $("#PaymentForm").hide();
+            $("#PayMore").hide();
+            $("#PopularWallets").hide();
+            $("#paynow").addClass("disabled");
+
+
+            $("#checkout").on('click', function (event) {
+                $("#ShippingForm").show();
+                $("#dtBasicExample").addClass("opac");
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    $(this).addClass('disabled');
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $("#shipcontinue").on('click', function (event) {
+                $("#PaymentForm").show();
+                $("#ShippingForm").addClass("opac");
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    $(this).addClass('disabled');
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $("#paymoreoptions").on('click', function (event) {
+                $("#PayMore").show();
+                
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $("#popularwallets").on('click', function (event) {
+                $("#PopularWallets").show();
+                
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+
+                    
+                } // End if
+                
+                $("#sel1").on('change',(e)=>{
+                    e.preventDefault();
+                    var pay_option=$(this).val();
+                    var pay_rd=$("input[name='pw']:checked").val();
+                    console.log(pay_option);
+                    console.log(pay_rd);
+
+                    
+                }); 
+
+                if(pay_option !== '' || pay_rd !== ''){
+                        console.log(pay_option);
+                        $("#paynow").removeClass("disabled");
+
+                    }
+                    else{
+                        $("#paynow").addClass("disabled"); 
+                    }
+                            
+            });
+        
+            
+
+            var amt=$("span.subtotal").text();
+            $("span.finalamt").html(amt);
+
+            
+        });
+        
+    </script>
+
+</body>
+</html>
